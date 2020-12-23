@@ -22,8 +22,8 @@ Gradle creates "one" file with name `TEST-junit.framework.TestSuite$1.xml` . Whe
 ### Impact on older tools
 The behavior affects tools that now depends on the convention established by ant  (affects migration to gradle). Jenkins for example sees only one file for missing test. It fails to report the offending testclass.
 
-### Problem demo 
-./gradlew sampletest
+### Problem demo - run all testclass.
+./gradlew test --tests "TestNumbers*"
 
 
 #then check content of files in build/
