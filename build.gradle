@@ -1,0 +1,26 @@
+apply plugin: 'java'
+
+
+ 
+
+group "org.gradle.bugdemo"
+version "0.1.0.0"
+
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+ 
+
+dependencies {
+ 
+
+    testImplementation 'junit:junit:4.12'
+
+ 
+}
+
+ 
+ 
+
