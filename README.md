@@ -1,4 +1,5 @@
 ## Bug report: Gradle  does not create TEST-<testclassname>.xml file  when testclass actually does not have any test. 
+https://github.com/gradle/gradle/issues/15644
   
 We are migrating from ant to gradle.  When a testclass does not have testmethod, ant creates TEST-<testclass>.xml correctly.
 Gradle creates "one" file with name `TEST-junit.framework.TestSuite$1.xml` . When there are multiple classes this causes details lost. Only the last one is now seen.  
