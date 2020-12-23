@@ -1,8 +1,6 @@
 package org.sample.numberutils;
 
-import net.bytebuddy.ToString;
 
-@ToString
 public class Numbers {
 
     public int add(int left, int right) {
