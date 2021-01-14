@@ -23,13 +23,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd6e32fd-c42b-43d2-88ba-8d12e53e527e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/NotATestButClassEndingInTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4SkippedClassLevelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4SkippedMethodLevelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4WithOneTestMethodTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbersWithJunit4RunnerButNoMethodTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/number-utils.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/number-utils.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers1Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers3BTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers3EmptyTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers9Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbersA3Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbersTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers1AEmptyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers3WithNoTestMethodsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers3AEmptyTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers3WithOneTestMethodTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers3EmptyTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,6 +142,17 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -262,6 +277,7 @@
       <workItem from="1607421825661" duration="1758000" />
       <workItem from="1608188466494" duration="5240000" />
       <workItem from="1608693697306" duration="1661000" />
+      <workItem from="1610595693062" duration="4706000" />
     </task>
     <task id="LOCAL-00001" summary="Junk state. not working :)">
       <created>1605631292263</created>
@@ -339,16 +355,6 @@
           <url>jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jacoco/org.jacoco.agent/0.8.3/edd294e541c8176d55768ba4b8bcb1bb267d18f4/org.jacoco.agent-0.8.3-runtime.jar!/org/jacoco/agent/rt/internal_1f1cc91/Agent.class</url>
           <line>67</line>
           <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/build.gradle</url>
-          <line>102</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/build.gradle</url>
-          <line>51</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

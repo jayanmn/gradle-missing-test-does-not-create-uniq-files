@@ -18,9 +18,21 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
 
+
  
 }
 
  
- 
+ test {
+
+     useJUnit()
+     filter {
+         failOnNoMatchingTests false
+         includeTestsMatching "*TestNumbers3WithNoTestMethodsTest*"
+
+     }
+     afterTest { TestDescriptor td, TestResult tr ->
+         println( "${td} ${tr} ${tr.exception}")
+     }
+ }
 
