@@ -12,6 +12,6 @@ public class TestNumbers4WithOneTestMethodTest {
 
     @Test
     public void ignoredInJunit4(){
-
+        System.out.println(new Numbers().add(1,2));
     }
 }

@@ -15,6 +15,6 @@ public class TestNumbers4SkippedMethodLevelTest {
     @Test
     @Ignore
     public void ignoredInJunit4(){
-
+        System.out.println(new Numbers().add(1,2));
     }
 }

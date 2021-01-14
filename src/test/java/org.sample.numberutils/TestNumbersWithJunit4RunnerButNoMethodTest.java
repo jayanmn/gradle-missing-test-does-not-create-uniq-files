@@ -13,5 +13,6 @@ public class TestNumbersWithJunit4RunnerButNoMethodTest {
         System.out.println("Nothing in test actually");
     }
     public void notAtest(){
+        System.out.println(new Numbers().add(1,2));
     }
 }

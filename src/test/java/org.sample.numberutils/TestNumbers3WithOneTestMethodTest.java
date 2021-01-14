@@ -12,6 +12,6 @@ public class TestNumbers3WithOneTestMethodTest extends TestCase {
 
 
     public void testJunit3(){
-
+        System.out.println(new Numbers().add(1,2));
     }
 }

@@ -10,7 +10,7 @@ import org.junit.Test;
 public class TestNumbers4SkippedClassLevelTest {
 
     public void TestNumbers3EmptyTest () {
-
+        System.out.println(new Numbers().add(1,2));
     }
 
 

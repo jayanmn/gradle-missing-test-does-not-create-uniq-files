@@ -3,7 +3,7 @@ package org.sample.numberutils;
 
 import junit.framework.TestCase;
 
-public class TestNumbers3WithNoTestMethodsTest extends TestCase {
+public class TestNumbers3WithNoTestMethodsDuplicate1Test extends TestCase {
 
     public void TestNumbers3EmptyTest () {
     }
