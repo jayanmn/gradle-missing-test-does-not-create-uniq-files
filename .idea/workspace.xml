@@ -23,9 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd6e32fd-c42b-43d2-88ba-8d12e53e527e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4IgnoredAtMethodLevelParameterizedTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4SkippedParameterizedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4IgnoredAtClassLevelParameterizedTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4IgnoredAtClassLevelParameterizedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4IgnoredAtClassLevelParameterizedTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +344,7 @@
       <workItem from="1607421825661" duration="1758000" />
       <workItem from="1608188466494" duration="5240000" />
       <workItem from="1608693697306" duration="1661000" />
-      <workItem from="1610595693062" duration="22369000" />
+      <workItem from="1610595693062" duration="22813000" />
     </task>
     <task id="LOCAL-00001" summary="Junk state. not working :)">
       <created>1605631292263</created>

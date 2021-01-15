@@ -32,11 +32,10 @@ test {
 //
 //    }
 
-    def destination = reports.junitXml.getDestination().getAbsolutePath()
 
     afterTest { TestDescriptor td, TestResult tr ->
+        def destination = reports.junitXml.getDestination().getAbsolutePath()
         if (tr.exception != null) {
-            println "LOSTTEST ${td.className} ${tr.exception.class.canonicalName} : ${tr.exception.message}: "
             def message = tr.exception.message
             if (message.startsWith("No tests found in")) {
                 String[] messageData = message.split("\\s+")

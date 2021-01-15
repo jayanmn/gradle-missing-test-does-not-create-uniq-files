@@ -11,8 +11,8 @@ import java.util.Collection;
 
 
 @RunWith(Parameterized.class)
-@Ignore
-public class TestNumbers4IgnoredAtClassLevelParameterizedTest {
+public class TestNumbers4IgnoredAtMethodLevelParameterizedTest {
+
     @Parameterized.Parameters
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
@@ -25,6 +25,7 @@ public class TestNumbers4IgnoredAtClassLevelParameterizedTest {
     private String data;
 
     @Test
+    @Ignore
     public void ignoredInJunit4() {
         System.out.println(data);
     }
