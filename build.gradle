@@ -24,45 +24,43 @@ dependencies {
 
 test {
 
-
+//
 //    filter {
 //        //    includeTestsMatching "*TestNumbers3WithNoTestMethodsTest*"
 //        //includeTestsMatching "*NotATestButClassEndingInTest*"
 //        // includeTestsMatching "TestNumbers4SkippedClassLevelTest"
 //
 //    }
+
+    def destination = reports.junitXml.getDestination().getAbsolutePath()
+
     afterTest { TestDescriptor td, TestResult tr ->
         if (tr.exception != null) {
             println "LOSTTEST ${td.className} ${tr.exception.class.canonicalName} : ${tr.exception.message}: "
             def message = tr.exception.message
             if (message.startsWith("No tests found in")) {
                 String[] messageData = message.split("\\s+")
-                println("afterTestLISTENER:${message} ${messageData}")
-
                 String offendingTestClassName = messageData[4]
-                def xmlBuillder = new MarkupBuilder(
-                        new FileWriter("C:\\MGCNoScan\\temp/TEST-${offendingTestClassName}.xml"));
-                xmlBuillder.setDoubleQuotes(true)
-                xmlBuillder.testsuite(name: offendingTestClassName, tests: 1, failures: 1, skipped: 0, errors: 0, hostname: "ignore", time: 1.0) {
-                    testcase(name: "warning", classname: offendingTestClassName) {
-                        failure(message: message, type: tr.exception.class.canonicalName,
-                                "${tr.exception}")
-                    }
-                }
+                createXmlResultFile(destination, offendingTestClassName, message, tr)
 
             } else {
-                def xmlBuillder = new MarkupBuilder(
-                        new FileWriter("C:\\MGCNoScan\\temp/TEST-${td.className}.xml"));
-                xmlBuillder.setDoubleQuotes(true)
-                xmlBuillder.testsuite(name: td.className, tests: 1, failures: 1, skipped: 0, errors: 0, hostname: "ignore", time: 1.0) {
-                    testcase(name: "warning", classname: td.className) {
-                        failure(message: message, type: tr.exception.class.canonicalName,
-                                "${tr.exception}")
-                    }
-                }
+                String offendingTestClassName = td.className;
+                createXmlResultFile(destination, offendingTestClassName, message, tr)
             }
         }
     }
 
+}
+
+private void createXmlResultFile(destination, String offendingTestClassName, message, tr) {
+    def xmlBuillder = new MarkupBuilder(
+            new FileWriter("${destination}/TEST-${offendingTestClassName}.xml"));
+    xmlBuillder.setDoubleQuotes(true)
+    xmlBuillder.testsuite(name: offendingTestClassName, tests: 1, failures: 1, skipped: 0, errors: 0, hostname: "ignore", time: 1.0) {
+        testcase(name: "warning", classname: offendingTestClassName) {
+            failure(message: message, type: tr.exception.class.canonicalName, time: 1.0,
+                    "${tr.exception}")
+        }
+    }
 }
 
