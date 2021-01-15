@@ -1,3 +1,5 @@
+import groovy.xml.MarkupBuilder
+
 apply plugin: 'java'
 
 
@@ -29,8 +31,37 @@ test {
 //        // includeTestsMatching "TestNumbers4SkippedClassLevelTest"
 //
 //    }
-    afterSuite { TestDescriptor td, TestResult tr ->
-        println("LISTENER:${td} ${tr} ${tr.exception}")
+    afterTest { TestDescriptor td, TestResult tr ->
+        if (tr.exception != null) {
+            println "LOSTTEST ${td.className} ${tr.exception.class.canonicalName} : ${tr.exception.message}: "
+            def message = tr.exception.message
+            if (message.startsWith("No tests found in")) {
+                String[] messageData = message.split("\\s+")
+                println("afterTestLISTENER:${message} ${messageData}")
+
+                String offendingTestClassName = messageData[4]
+                def xmlBuillder = new MarkupBuilder(
+                        new FileWriter("C:\\MGCNoScan\\temp/TEST-${offendingTestClassName}.xml"));
+                xmlBuillder.setDoubleQuotes(true)
+                xmlBuillder.testsuite(name: offendingTestClassName, tests: 1, failures: 1, skipped: 0, errors: 0, hostname: "ignore", time: 1.0) {
+                    testcase(name: "warning", classname: offendingTestClassName) {
+                        failure(message: message, type: tr.exception.class.canonicalName,
+                                "${tr.exception}")
+                    }
+                }
+
+            } else {
+                def xmlBuillder = new MarkupBuilder(
+                        new FileWriter("C:\\MGCNoScan\\temp/TEST-${td.className}.xml"));
+                xmlBuillder.setDoubleQuotes(true)
+                xmlBuillder.testsuite(name: td.className, tests: 1, failures: 1, skipped: 0, errors: 0, hostname: "ignore", time: 1.0) {
+                    testcase(name: "warning", classname: td.className) {
+                        failure(message: message, type: tr.exception.class.canonicalName,
+                                "${tr.exception}")
+                    }
+                }
+            }
+        }
     }
 
 }
