@@ -26,6 +26,7 @@ public class TestNumbers4IgnoredAtClassLevelParameterizedTest {
 
     @Test
     public void ignoredInJunit4() {
+        System.out.println(new Numbers().add(1,2));
         System.out.println(data);
     }
 }

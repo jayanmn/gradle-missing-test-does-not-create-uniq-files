@@ -24,41 +24,52 @@ dependencies {
 
 test {
 
-//
-//    filter {
-//        //    includeTestsMatching "*TestNumbers3WithNoTestMethodsTest*"
-//        //includeTestsMatching "*NotATestButClassEndingInTest*"
-//        // includeTestsMatching "TestNumbers4SkippedClassLevelTest"
-//
-//    }
+
+    filter {
+        //    includeTestsMatching "*TestNumbers3WithNoTestMethodsTest*"
+        //includeTestsMatching "*NotATestButClassEndingInTest*"
+        // includeTestsMatching "TestNumbers4SkippedClassLevelTest"
+
+    }
 
 
     afterTest { TestDescriptor td, TestResult tr ->
         def destination = reports.junitXml.getDestination().getAbsolutePath()
         if (tr.exception != null) {
             def message = tr.exception.message
-            if (message.startsWith("No tests found in")) {
+            if (message!=null && message.startsWith("No tests found in")) {
                 String[] messageData = message.split("\\s+")
                 String offendingTestClassName = messageData[4]
-                createXmlResultFile(destination, offendingTestClassName, message, tr)
-
+                createXmlResultFile(destination, offendingTestClassName, tr)
             } else {
-                String offendingTestClassName = td.className;
-                createXmlResultFile(destination, offendingTestClassName, message, tr)
+                String offendingTestClassName = td.className
+                createXmlResultFile(destination, offendingTestClassName,  tr)
             }
         }
     }
 
 }
 
-private void createXmlResultFile(destination, String offendingTestClassName, message, tr) {
+/** creates a fake result xml for infrastructure to detect bad tests
+ *
+ * @param destination
+ * @param offendingTestClassName
+ * @param message
+ * @param testresult
+ */
+private void createXmlResultFile(destination, String offendingTestClassName, TestResult testResult) {
     def xmlBuillder = new MarkupBuilder(
-            new FileWriter("${destination}/TEST-${offendingTestClassName}.xml"));
+            new FileWriter("${destination}/TEST-${offendingTestClassName}.xml"))
     xmlBuillder.setDoubleQuotes(true)
-    xmlBuillder.testsuite(name: offendingTestClassName, tests: 1, failures: 1, skipped: 0, errors: 0, hostname: "ignore", time: 1.0) {
+    xmlBuillder.testsuite(name: offendingTestClassName, tests: 1,
+            failures: 1,
+            skipped: 0,
+            errors: 0,
+            hostname: "markerhost",
+            time: 1.0) {
         testcase(name: "warning", classname: offendingTestClassName) {
-            failure(message: message, type: tr.exception.class.canonicalName, time: 1.0,
-                    "${tr.exception}")
+            failure(message: testResult.exception.message, type: testResult.exception.class.canonicalName, time: 1.0,
+                    "${testResult.exception}")
         }
     }
 }

@@ -23,7 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd6e32fd-c42b-43d2-88ba-8d12e53e527e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4CallsExitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4WithAssertionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4WithNPETest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4IgnoredAtClassLevelParameterizedTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org.sample.numberutils/TestNumbers4IgnoredAtClassLevelParameterizedTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,13 +169,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -293,8 +300,8 @@
       <item itemvalue="Gradle.number-utils [sampletest]" />
       <item itemvalue="Gradle.TestNumbers3EmptyTest" />
       <item itemvalue="Gradle.gradle-missing-test-does-not-create-uniq-files [test]" />
-      <item itemvalue="Remote JVM Debug.remotegradle" />
       <item itemvalue="Gradle.TestNumbers4SkippedMethodLevelTest" />
+      <item itemvalue="Remote JVM Debug.remotegradle" />
     </list>
     <recent_temporary>
       <list>
@@ -341,7 +348,8 @@
       <workItem from="1607421825661" duration="1758000" />
       <workItem from="1608188466494" duration="5240000" />
       <workItem from="1608693697306" duration="1661000" />
-      <workItem from="1610595693062" duration="23786000" />
+      <workItem from="1610595693062" duration="29294000" />
+      <workItem from="1611033308505" duration="1554000" />
     </task>
     <task id="LOCAL-00001" summary="Junk state. not working :)">
       <created>1605631292263</created>
