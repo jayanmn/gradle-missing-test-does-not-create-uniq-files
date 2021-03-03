@@ -8,7 +8,7 @@ import jni.demo.crash.example.Library;
 
 public class LibraryCaller {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
         new Library().callAndCrash();
     }
 }

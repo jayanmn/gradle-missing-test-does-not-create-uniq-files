@@ -20,7 +20,42 @@ dependencies {
 
 
 }
+tasks.withType(Test) {
 
+    addTestListener(new TestListener() {
+        @Override
+        void beforeSuite(TestDescriptor suite) {
+            println "junk"
+        }
+
+        @Override
+        void afterSuite(TestDescriptor suite, TestResult result) {
+            println "afterSuite ${suite} ${result}"
+        }
+
+        @Override
+        void beforeTest(TestDescriptor testDescriptor) {
+            println "junk ${testDescriptor}"
+        }
+
+        @Override
+        void afterTest(TestDescriptor testDescriptor, TestResult tr) {
+            println "afterTest ${tr.exception}"
+            def destination = reports.junitXml.getDestination().getAbsolutePath()
+            if (tr.exception != null) {
+                def message = tr.exception.message
+                if (message!=null && message.startsWith("No tests found in")) {
+                    String[] messageData = message.split("\\s+")
+                    String offendingTestClassName = messageData[4]
+                    createXmlResultFile(destination, offendingTestClassName, tr)
+                } else {
+                    String offendingTestClassName = td.className
+                    createXmlResultFile(destination, offendingTestClassName,  tr)
+                }
+            }
+        }
+    })
+}
 
 test {
 
