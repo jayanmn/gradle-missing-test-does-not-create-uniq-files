@@ -39,9 +39,9 @@ tasks.withType(Test) {
         }
 
         @Override
-        void afterTest(TestDescriptor testDescriptor, TestResult tr) {
+        void afterTest(TestDescriptor td, TestResult tr) {
             println "afterTest ${tr.exception}"
-            def destination = reports.junitXml.getDestination().getAbsolutePath()
+            def destination = "c:\\MGCNoScan\\temps"
             if (tr.exception != null) {
                 def message = tr.exception.message
                 if (message!=null && message.startsWith("No tests found in")) {

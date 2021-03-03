@@ -23,9 +23,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dd6e32fd-c42b-43d2-88ba-8d12e53e527e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/example/LibraryCaller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/example/LibraryCaller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/jni/demo/crash/example/Library.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/zjni/demo/crash/example/Library.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/jni/demo/crash/example/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zjni/demo/crash/example/LibraryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/zjni/demo/crash/example/Library.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/zjni/demo/crash/example/LibraryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/zjni/demo/crash/example/LibraryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -347,7 +349,7 @@
       <workItem from="1612420179830" duration="6497000" />
       <workItem from="1612519188129" duration="1002000" />
       <workItem from="1614606417241" duration="10634000" />
-      <workItem from="1614750514246" duration="493000" />
+      <workItem from="1614750514246" duration="895000" />
     </task>
     <task id="LOCAL-00001" summary="Junk state. not working :)">
       <created>1605631292263</created>
