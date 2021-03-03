@@ -1,9 +1,6 @@
-package jni.demo.crash.example;
+package zjni.demo.crash.example;
 
-import example.LibraryCaller;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class LibraryTest {
 

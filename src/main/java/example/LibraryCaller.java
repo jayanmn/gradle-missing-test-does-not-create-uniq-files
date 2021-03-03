@@ -4,7 +4,7 @@
 package example;
 
 
-import jni.demo.crash.example.Library;
+import zjni.demo.crash.example.Library;
 
 public class LibraryCaller {
 
